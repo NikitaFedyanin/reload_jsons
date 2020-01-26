@@ -24,7 +24,6 @@ class ReloadJson:
     def reload_structure(self, template, response):
         tmp_structure = template['s']
         resp_structure = response['s']
-        tmp_values = template['d']
         resp_values = response['d']
         for i in range(len(resp_structure)):
             resp_matcher = resp_structure[i]
