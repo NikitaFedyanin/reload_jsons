@@ -5,29 +5,11 @@
    "result": {
       "_type": "record",
       "d": [
-            "sv.metelkov@tensor.ru",
+         "sv.metelkov@tensor.ru",
          true,
-            "79200000019",
-         {
-      "_type": "record",
-      "d": [
-         "Вася",
-         "Пупкин"
-      ],
-      "f": 0,
-      "s": [
-         {
-            "n": "name",
-            "t": "Строка"
-         },
-         {
-            "n": "surname",
-            "t": "Строка"
-         }
-      ]
-   },
-         "39",
-            null
+         "79200000019",
+         "aa",
+         "39"
       ],
       "f": 0,
       "s": [
@@ -50,10 +32,6 @@
          {
             "n": "phone_code",
             "t": "Строка"
-         },
-         {
-            "n": "email_bloked",
-            "t": "Логическое"
          }
       ]
    }
