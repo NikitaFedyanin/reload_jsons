@@ -1,0 +1,35 @@
+{
+   "id": 1,
+   "jsonrpc": "2.0",
+   "protocol": 4,
+   "result": {
+      "_type": "recordset",
+      "d": [
+         [
+            "$_PERSON",
+            "sv.metelkov@tensor.ru",
+            "79200000019",
+            null
+         ]
+      ],
+      "f": 0,
+      "s": [
+         {
+            "n": "uuid",
+            "t": "UUID"
+         },
+         {
+            "n": "email",
+            "t": "Строка"
+         },
+         {
+            "n": "phone",
+            "t": "Строка"
+         },
+         {
+            "n": "email_bloked",
+            "t": "Логическое"
+         }
+      ]
+   }
+}
