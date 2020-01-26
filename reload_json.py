@@ -36,16 +36,26 @@ class ReloadJson:
             if not tmp_matcher or resp_matcher not in tmp_structure:
                 self.add_value(template, resp_matcher, resp_values[i], i)
             # Поле удалили
-            if tmp_matcher and tmp_matcher not in resp_structure:
+            if tmp_matcher and tmp_matcher not in resp_structure and resp_matcher in tmp_structure:
                 self.delete_value(template, i)
+            # Поле заменили
+            if tmp_matcher and tmp_matcher not in resp_structure and resp_matcher not in tmp_structure:
+                self.replace_value(template, resp_matcher, resp_values[i], i)
 
-    def add_value(self, tmp, matcher_s, matcher_d, index):
+    @staticmethod
+    def add_value(tmp, matcher_s, matcher_d, index):
         tmp['s'].insert(index, matcher_s)
         tmp['d'].insert(index, matcher_d)
 
-    def delete_value(self, tmp, index):
+    @staticmethod
+    def delete_value(tmp, index):
         tmp['s'].pop(index)
         tmp['d'].pop(index)
+
+    @staticmethod
+    def replace_value(tmp, matcher_s, matcher_d, index):
+        tmp['s'][index] = matcher_s
+        tmp['d'][index] = matcher_d
 
     def write_result(self):
         with open('asserts/template.json', 'w', encoding='UTF-8') as f:

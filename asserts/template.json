@@ -5,14 +5,14 @@
    "result": {
       "_type": "record",
       "d": [
-            "$_PERSON",
             "sv.metelkov@tensor.ru",
+         true,
             "79200000019",
          {
       "_type": "record",
       "d": [
          "Вася",
-            "Пупкин"
+         "Пупкин"
       ],
       "f": 0,
       "s": [
@@ -26,17 +26,18 @@
          }
       ]
    },
+         "39",
             null
       ],
       "f": 0,
       "s": [
          {
-            "n": "uuid",
-            "t": "UUID"
-         },
-         {
             "n": "email",
             "t": "Строка"
+         },
+         {
+            "n": "is_employer",
+            "t": "Логическое"
          },
          {
             "n": "phone",
@@ -45,6 +46,10 @@
          {
             "n": "info",
             "t": "Запись"
+         },
+         {
+            "n": "phone_code",
+            "t": "Строка"
          },
          {
             "n": "email_bloked",

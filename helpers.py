@@ -64,11 +64,14 @@ class Client:
     json_body = read_file('asserts/response.json')
 
     def compare_jsons(self, template):
-        tmp_str = read_file(template, strip=False)
-        resp_str = read_file(template, strip=False)
+        tmp_str = read_file(template, strip=True)
         assert tmp_str == self.json_body, ''.join(
-            difflib.Differ().compare(tmp_str.splitlines(keepends=True),
-                                     resp_str.splitlines(keepends=True)))
+            difflib.Differ().compare(self.beauty_json(tmp_str).splitlines(keepends=True),
+                                     self.beauty_json(self.json_body).splitlines(keepends=True)))
+
+    @staticmethod
+    def beauty_json(json_str):
+        return json.dumps(json.loads(json_str), indent=3, ensure_ascii=False)
 
     def reload_template(self, tmp_path):
         tmp_str = read_file(tmp_path)
