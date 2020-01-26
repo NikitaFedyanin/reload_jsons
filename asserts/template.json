@@ -3,14 +3,30 @@
    "jsonrpc": "2.0",
    "protocol": 4,
    "result": {
-      "_type": "recordset",
+      "_type": "record",
       "d": [
-         [
             "$_PERSON",
             "sv.metelkov@tensor.ru",
             "79200000019",
+         {
+      "_type": "record",
+      "d": [
+         "Вася",
+            "Пупкин"
+      ],
+      "f": 0,
+      "s": [
+         {
+            "n": "name",
+            "t": "Строка"
+         },
+         {
+            "n": "surname",
+            "t": "Строка"
+         }
+      ]
+   },
             null
-         ]
       ],
       "f": 0,
       "s": [
@@ -25,6 +41,10 @@
          {
             "n": "phone",
             "t": "Строка"
+         },
+         {
+            "n": "info",
+            "t": "Запись"
          },
          {
             "n": "email_bloked",
